@@ -1,0 +1,563 @@
+{
+  "meta": {
+    "source_file": "dealer_marketing_data.xlsx",
+    "row_count": 180,
+    "date_range": {
+      "start": "2025-01-10",
+      "end": "2025-12-30"
+    }
+  },
+  "kpis": {
+    "spend": 16367931.0,
+    "revenue": 150862901.0,
+    "profit": 134494970.0,
+    "roi": 8.217,
+    "impressions": 9408390,
+    "clicks": 173743,
+    "ctr": 0.0185,
+    "leads": 9897,
+    "orders": 1277,
+    "lead_rate": 0.057,
+    "close_rate": 0.129,
+    "cpl": 1653.83,
+    "cpa": 12817.49
+  },
+  "funnel": {
+    "impressions": 9408390,
+    "clicks": 173743,
+    "leads": 9897,
+    "test_drives": 4156,
+    "orders": 1277
+  },
+  "weekly_trend": [
+    {
+      "week_end": "2025-01-12",
+      "spend": 113052.0,
+      "revenue": 313158.0,
+      "leads": 17,
+      "orders": 3
+    },
+    {
+      "week_end": "2025-01-19",
+      "spend": 117972.0,
+      "revenue": 1566271.0,
+      "leads": 101,
+      "orders": 13
+    },
+    {
+      "week_end": "2025-01-26",
+      "spend": 901311.0,
+      "revenue": 6900230.0,
+      "leads": 602,
+      "orders": 71
+    },
+    {
+      "week_end": "2025-02-02",
+      "spend": 376304.0,
+      "revenue": 2279702.0,
+      "leads": 147,
+      "orders": 21
+    },
+    {
+      "week_end": "2025-02-09",
+      "spend": 289699.0,
+      "revenue": 5166715.0,
+      "leads": 192,
+      "orders": 31
+    },
+    {
+      "week_end": "2025-02-16",
+      "spend": 665265.0,
+      "revenue": 622838.0,
+      "leads": 84,
+      "orders": 6
+    },
+    {
+      "week_end": "2025-02-23",
+      "spend": 593519.0,
+      "revenue": 3299110.0,
+      "leads": 263,
+      "orders": 31
+    },
+    {
+      "week_end": "2025-03-02",
+      "spend": 0.0,
+      "revenue": 0.0,
+      "leads": 0,
+      "orders": 0
+    },
+    {
+      "week_end": "2025-03-09",
+      "spend": 486876.0,
+      "revenue": 4552389.0,
+      "leads": 303,
+      "orders": 43
+    },
+    {
+      "week_end": "2025-03-16",
+      "spend": 593415.0,
+      "revenue": 8840332.0,
+      "leads": 326,
+      "orders": 59
+    },
+    {
+      "week_end": "2025-03-23",
+      "spend": 235059.0,
+      "revenue": 3827078.0,
+      "leads": 208,
+      "orders": 26
+    },
+    {
+      "week_end": "2025-03-30",
+      "spend": 601266.0,
+      "revenue": 8735529.0,
+      "leads": 388,
+      "orders": 62
+    },
+    {
+      "week_end": "2025-04-06",
+      "spend": 127546.0,
+      "revenue": 375360.0,
+      "leads": 19,
+      "orders": 4
+    },
+    {
+      "week_end": "2025-04-13",
+      "spend": 182289.0,
+      "revenue": 2335542.0,
+      "leads": 192,
+      "orders": 18
+    },
+    {
+      "week_end": "2025-04-20",
+      "spend": 341172.0,
+      "revenue": 1743877.0,
+      "leads": 116,
+      "orders": 15
+    },
+    {
+      "week_end": "2025-04-27",
+      "spend": 203001.0,
+      "revenue": 3260730.0,
+      "leads": 121,
+      "orders": 21
+    },
+    {
+      "week_end": "2025-05-04",
+      "spend": 295244.0,
+      "revenue": 1436837.0,
+      "leads": 79,
+      "orders": 9
+    },
+    {
+      "week_end": "2025-05-11",
+      "spend": 269528.0,
+      "revenue": 1566706.0,
+      "leads": 196,
+      "orders": 20
+    },
+    {
+      "week_end": "2025-05-18",
+      "spend": 64810.0,
+      "revenue": 1017824.0,
+      "leads": 94,
+      "orders": 8
+    },
+    {
+      "week_end": "2025-05-25",
+      "spend": 478258.0,
+      "revenue": 5198859.0,
+      "leads": 248,
+      "orders": 35
+    },
+    {
+      "week_end": "2025-06-01",
+      "spend": 725859.0,
+      "revenue": 3624604.0,
+      "leads": 338,
+      "orders": 48
+    },
+    {
+      "week_end": "2025-06-08",
+      "spend": 544213.0,
+      "revenue": 4487597.0,
+      "leads": 263,
+      "orders": 30
+    },
+    {
+      "week_end": "2025-06-15",
+      "spend": 207879.0,
+      "revenue": 145702.0,
+      "leads": 40,
+      "orders": 1
+    },
+    {
+      "week_end": "2025-06-22",
+      "spend": 351959.0,
+      "revenue": 8528875.0,
+      "leads": 447,
+      "orders": 58
+    },
+    {
+      "week_end": "2025-06-29",
+      "spend": 125105.0,
+      "revenue": 1775459.0,
+      "leads": 248,
+      "orders": 27
+    },
+    {
+      "week_end": "2025-07-06",
+      "spend": 252684.0,
+      "revenue": 902675.0,
+      "leads": 81,
+      "orders": 6
+    },
+    {
+      "week_end": "2025-07-13",
+      "spend": 323181.0,
+      "revenue": 2215262.0,
+      "leads": 196,
+      "orders": 29
+    },
+    {
+      "week_end": "2025-07-20",
+      "spend": 485836.0,
+      "revenue": 6850178.0,
+      "leads": 351,
+      "orders": 63
+    },
+    {
+      "week_end": "2025-07-27",
+      "spend": 505258.0,
+      "revenue": 2774683.0,
+      "leads": 194,
+      "orders": 21
+    },
+    {
+      "week_end": "2025-08-03",
+      "spend": 239475.0,
+      "revenue": 1547018.0,
+      "leads": 139,
+      "orders": 16
+    },
+    {
+      "week_end": "2025-08-10",
+      "spend": 141023.0,
+      "revenue": 3076468.0,
+      "leads": 184,
+      "orders": 28
+    },
+    {
+      "week_end": "2025-08-17",
+      "spend": 256952.0,
+      "revenue": 5759929.0,
+      "leads": 243,
+      "orders": 38
+    },
+    {
+      "week_end": "2025-08-24",
+      "spend": 432766.0,
+      "revenue": 2667970.0,
+      "leads": 248,
+      "orders": 36
+    },
+    {
+      "week_end": "2025-08-31",
+      "spend": 208761.0,
+      "revenue": 2489973.0,
+      "leads": 98,
+      "orders": 15
+    },
+    {
+      "week_end": "2025-09-07",
+      "spend": 22361.0,
+      "revenue": 103970.0,
+      "leads": 21,
+      "orders": 2
+    },
+    {
+      "week_end": "2025-09-14",
+      "spend": 45666.0,
+      "revenue": 3979000.0,
+      "leads": 121,
+      "orders": 25
+    },
+    {
+      "week_end": "2025-09-21",
+      "spend": 531295.0,
+      "revenue": 4072178.0,
+      "leads": 346,
+      "orders": 34
+    },
+    {
+      "week_end": "2025-09-28",
+      "spend": 391971.0,
+      "revenue": 4039852.0,
+      "leads": 252,
+      "orders": 30
+    },
+    {
+      "week_end": "2025-10-05",
+      "spend": 285106.0,
+      "revenue": 1100686.0,
+      "leads": 90,
+      "orders": 14
+    },
+    {
+      "week_end": "2025-10-12",
+      "spend": 61287.0,
+      "revenue": 1270490.0,
+      "leads": 49,
+      "orders": 13
+    },
+    {
+      "week_end": "2025-10-19",
+      "spend": 126180.0,
+      "revenue": 131454.0,
+      "leads": 35,
+      "orders": 2
+    },
+    {
+      "week_end": "2025-10-26",
+      "spend": 387489.0,
+      "revenue": 4444450.0,
+      "leads": 324,
+      "orders": 48
+    },
+    {
+      "week_end": "2025-11-02",
+      "spend": 18743.0,
+      "revenue": 181486.0,
+      "leads": 35,
+      "orders": 2
+    },
+    {
+      "week_end": "2025-11-09",
+      "spend": 269727.0,
+      "revenue": 3066958.0,
+      "leads": 183,
+      "orders": 23
+    },
+    {
+      "week_end": "2025-11-16",
+      "spend": 197593.0,
+      "revenue": 1977373.0,
+      "leads": 176,
+      "orders": 29
+    },
+    {
+      "week_end": "2025-11-23",
+      "spend": 393116.0,
+      "revenue": 1090952.0,
+      "leads": 108,
+      "orders": 12
+    },
+    {
+      "week_end": "2025-11-30",
+      "spend": 825779.0,
+      "revenue": 5002698.0,
+      "leads": 476,
+      "orders": 41
+    },
+    {
+      "week_end": "2025-12-07",
+      "spend": 371262.0,
+      "revenue": 6614495.0,
+      "leads": 397,
+      "orders": 52
+    },
+    {
+      "week_end": "2025-12-14",
+      "spend": 187309.0,
+      "revenue": 2011058.0,
+      "leads": 172,
+      "orders": 14
+    },
+    {
+      "week_end": "2025-12-21",
+      "spend": 217021.0,
+      "revenue": 810211.0,
+      "leads": 153,
+      "orders": 10
+    },
+    {
+      "week_end": "2025-12-28",
+      "spend": 239972.0,
+      "revenue": 631652.0,
+      "leads": 139,
+      "orders": 8
+    },
+    {
+      "week_end": "2026-01-04",
+      "spend": 59517.0,
+      "revenue": 448458.0,
+      "leads": 54,
+      "orders": 6
+    }
+  ],
+  "top_campaigns": [
+    {
+      "campaign_name": "SUV Pro-年終主打",
+      "spend": 941041,
+      "revenue": 16216453,
+      "leads": 798,
+      "orders": 122,
+      "roi": 16.2325
+    },
+    {
+      "campaign_name": "City Mini-秋季主打",
+      "spend": 1311632,
+      "revenue": 12349114,
+      "leads": 836,
+      "orders": 111,
+      "roi": 8.4151
+    },
+    {
+      "campaign_name": "SUV Pro-秋季主打",
+      "spend": 1250282,
+      "revenue": 12071867,
+      "leads": 916,
+      "orders": 122,
+      "roi": 8.6553
+    },
+    {
+      "campaign_name": "SUV Pro-春季主打",
+      "spend": 506256,
+      "revenue": 11121292,
+      "leads": 644,
+      "orders": 77,
+      "roi": 20.9677
+    },
+    {
+      "campaign_name": "Pickup Max-春季主打",
+      "spend": 831973,
+      "revenue": 10635188,
+      "leads": 525,
+      "orders": 74,
+      "roi": 11.7831
+    },
+    {
+      "campaign_name": "EV Lite-春季主打",
+      "spend": 796624,
+      "revenue": 10333079,
+      "leads": 665,
+      "orders": 85,
+      "roi": 11.9711
+    },
+    {
+      "campaign_name": "Sedan X-秋季主打",
+      "spend": 914169,
+      "revenue": 9945649,
+      "leads": 537,
+      "orders": 79,
+      "roi": 9.8794
+    },
+    {
+      "campaign_name": "Sedan X-春季主打",
+      "spend": 1289986,
+      "revenue": 8215910,
+      "leads": 662,
+      "orders": 89,
+      "roi": 5.369
+    }
+  ],
+  "region_performance": [
+    {
+      "region": "Tainan",
+      "spend": 3860905,
+      "revenue": 39953257,
+      "leads": 2481,
+      "orders": 333,
+      "roi": 9.3482
+    },
+    {
+      "region": "Taoyuan",
+      "spend": 3570253,
+      "revenue": 38816241,
+      "leads": 2532,
+      "orders": 327,
+      "roi": 9.8721
+    },
+    {
+      "region": "Taichung",
+      "spend": 2799899,
+      "revenue": 24796462,
+      "leads": 1511,
+      "orders": 194,
+      "roi": 7.8562
+    },
+    {
+      "region": "Taipei",
+      "spend": 2982521,
+      "revenue": 23717130,
+      "leads": 1878,
+      "orders": 219,
+      "roi": 6.952
+    },
+    {
+      "region": "Kaohsiung",
+      "spend": 3154353,
+      "revenue": 23579811,
+      "leads": 1495,
+      "orders": 204,
+      "roi": 6.4753
+    }
+  ],
+  "channel_performance": [
+    {
+      "channel": "Line OA",
+      "spend": 4082426,
+      "impressions": 2188861,
+      "clicks": 40076,
+      "leads": 2193,
+      "orders": 303,
+      "ctr": 0.0183,
+      "cpl": 1861.5714,
+      "cpa": 13473.3531
+    },
+    {
+      "channel": "Google Ads",
+      "spend": 3723920,
+      "impressions": 1810839,
+      "clicks": 33354,
+      "leads": 1770,
+      "orders": 203,
+      "ctr": 0.0184,
+      "cpl": 2103.9096,
+      "cpa": 18344.4335
+    },
+    {
+      "channel": "Facebook",
+      "spend": 3321250,
+      "impressions": 2357248,
+      "clicks": 44375,
+      "leads": 2637,
+      "orders": 333,
+      "ctr": 0.0188,
+      "cpl": 1259.4805,
+      "cpa": 9973.7237
+    },
+    {
+      "channel": "YouTube",
+      "spend": 2983636,
+      "impressions": 1506083,
+      "clicks": 29492,
+      "leads": 1710,
+      "orders": 254,
+      "ctr": 0.0196,
+      "cpl": 1744.8164,
+      "cpa": 11746.5984
+    },
+    {
+      "channel": "SEO",
+      "spend": 2256699,
+      "impressions": 1545359,
+      "clicks": 26446,
+      "leads": 1587,
+      "orders": 184,
+      "ctr": 0.0171,
+      "cpl": 1421.9905,
+      "cpa": 12264.6685
+    }
+  ]
+}

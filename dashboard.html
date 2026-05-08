@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>車商行銷數據儀表板</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #121c31;
+      --text: #dbeafe;
+      --muted: #93c5fd;
+      --accent: #38bdf8;
+      --ok: #22c55e;
+      --warn: #f59e0b;
+      --bad: #ef4444;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(160deg, #020617, #0b1220);
+      color: var(--text);
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    h1 { margin: 0 0 4px; }
+    .subtitle { color: var(--muted); margin-bottom: 20px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      padding: 14px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+    }
+    .kpi-title { color: var(--muted); font-size: 13px; }
+    .kpi-value { font-size: 26px; font-weight: 700; margin-top: 8px; }
+    .section-title { font-size: 18px; margin: 24px 0 10px; }
+    canvas { width: 100%; max-height: 320px; background: #0f172a; border-radius: 8px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: left; padding: 8px; border-bottom: 1px solid #1e293b; }
+    th { color: var(--muted); font-weight: 600; }
+    .tag-ok { color: var(--ok); }
+    .tag-bad { color: var(--bad); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>車商行銷數據儀表板</h1>
+    <div id="meta" class="subtitle">載入中...</div>
+
+    <div id="kpis" class="grid"></div>
+
+    <div class="section-title">每週花費與營收趨勢</div>
+    <div class="card"><canvas id="trendCanvas" width="1160" height="300"></canvas></div>
+
+    <div class="section-title">Top Campaigns</div>
+    <div class="card">
+      <table id="campaignTable">
+        <thead>
+          <tr>
+            <th>活動名稱</th>
+            <th>花費</th>
+            <th>營收</th>
+            <th>Leads</th>
+            <th>Orders</th>
+            <th>ROI</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const fmtCurrency = (v) => "NT$ " + Number(v).toLocaleString("zh-TW", { maximumFractionDigits: 0 });
+    const fmtPct = (v) => (Number(v) * 100).toFixed(2) + "%";
+    const fmtInt = (v) => Number(v).toLocaleString("zh-TW");
+
+    function renderKpis(kpis) {
+      const cards = [
+        ["總花費", fmtCurrency(kpis.spend)],
+        ["總營收", fmtCurrency(kpis.revenue)],
+        ["總利潤", fmtCurrency(kpis.profit)],
+        ["ROI", fmtPct(kpis.roi)],
+        ["CTR", fmtPct(kpis.ctr)],
+        ["Leads", fmtInt(kpis.leads)],
+        ["Orders", fmtInt(kpis.orders)],
+        ["CPA", fmtCurrency(kpis.cpa)]
+      ];
+      document.getElementById("kpis").innerHTML = cards
+        .map(([title, value]) => `<div class="card"><div class="kpi-title">${title}</div><div class="kpi-value">${value}</div></div>`)
+        .join("");
+    }
+
+    function renderTrend(weeklyTrend) {
+      const canvas = document.getElementById("trendCanvas");
+      const ctx = canvas.getContext("2d");
+      const w = canvas.width;
+      const h = canvas.height;
+      ctx.clearRect(0, 0, w, h);
+
+      const pad = { l: 58, r: 18, t: 20, b: 45 };
+      const chartW = w - pad.l - pad.r;
+      const chartH = h - pad.t - pad.b;
+
+      const spends = weeklyTrend.map(x => x.spend);
+      const revenues = weeklyTrend.map(x => x.revenue);
+      const maxValue = Math.max(...spends, ...revenues, 1);
+      const xStep = weeklyTrend.length > 1 ? chartW / (weeklyTrend.length - 1) : chartW;
+
+      ctx.strokeStyle = "#334155";
+      ctx.beginPath();
+      ctx.moveTo(pad.l, pad.t);
+      ctx.lineTo(pad.l, pad.t + chartH);
+      ctx.lineTo(pad.l + chartW, pad.t + chartH);
+      ctx.stroke();
+
+      const plotLine = (values, color) => {
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        values.forEach((v, i) => {
+          const x = pad.l + i * xStep;
+          const y = pad.t + chartH - (v / maxValue) * chartH;
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+      };
+
+      plotLine(spends, "#38bdf8");
+      plotLine(revenues, "#22c55e");
+
+      ctx.fillStyle = "#93c5fd";
+      ctx.font = "12px Segoe UI";
+      ctx.fillText("Spend", pad.l + 8, pad.t + 12);
+      ctx.fillStyle = "#22c55e";
+      ctx.fillText("Revenue", pad.l + 70, pad.t + 12);
+    }
+
+    function renderCampaignTable(rows) {
+      const tbody = document.querySelector("#campaignTable tbody");
+      tbody.innerHTML = rows.map((row) => {
+        const roiClass = Number(row.roi) >= 0 ? "tag-ok" : "tag-bad";
+        return `
+          <tr>
+            <td>${row.campaign_name}</td>
+            <td>${fmtCurrency(row.spend)}</td>
+            <td>${fmtCurrency(row.revenue)}</td>
+            <td>${fmtInt(row.leads)}</td>
+            <td>${fmtInt(row.orders)}</td>
+            <td class="${roiClass}">${fmtPct(row.roi)}</td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    async function init() {
+      try {
+        const res = await fetch("./data/marketing_dashboard.json");
+        if (!res.ok) throw new Error("讀取 JSON 失敗");
+        const data = await res.json();
+
+        const meta = data.meta;
+        document.getElementById("meta").textContent =
+          `來源: ${meta.source_file} | 筆數: ${meta.row_count} | 期間: ${meta.date_range.start} ~ ${meta.date_range.end}`;
+
+        renderKpis(data.kpis);
+        renderTrend(data.weekly_trend);
+        renderCampaignTable(data.top_campaigns);
+      } catch (err) {
+        document.getElementById("meta").textContent = "資料載入失敗，請先執行 Python 腳本產生 JSON。";
+        console.error(err);
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
